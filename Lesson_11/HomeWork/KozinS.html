@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--1. Что выведет этот код?-->
+
+<script>
+var body = document.body; // мы объявляем переменную и присваиваем ей в значение всё тело нашего сайта
+body.innerHTML = "<!--" + body.tagName + "-->"; // внутрь нашего тела мы добавляем информацию "тело.имяТега", которая будет означать "body", поскольку "body" является одновременно и телом, и единственным тегом за пределами тега "script".
+alert(body.firstChild.data); // выведет "body", поскольку вызов означает: "информация по первому элементу тела"
+</script>
+
+<!--2. Напишите функцию, которая удаляет элемент из DOM.
+Синтаксис должен быть таким: remove(elem), то есть, в отличие от parentNode.removeChild(elem) — без родительского элемента.-->
+
+<div>Это</div>
+<div>Все</div>
+<div>Элементы DOM</div>
+<input type="button" value="remove" onclick="remove(elem)"> <!-- я добавил кнопку, при нажатии на которую наша функция удалит указанный элемент-->
+
+<script>
+  var elem = document.body.children[0];
+  function remove(elem) {
+    document.body.removeChild(elem);
+   }
+  //remove(elem);   // если раскомментировать эту строку, то функция автоматически удалит элемент "<div>Это</div>" при перезагрузке страницы. И мы //даже не узнаем ,что он там был, а это грустно. Поэтому я добавил кнопку)))
+</script>
+</body>
+</html>
