@@ -72,3 +72,4 @@ let example = document.getElementById("123");
 console.dir(document);
 
 example.setAttribute("class", "green");
+
