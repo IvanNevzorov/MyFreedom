@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var body = document.body;
+      body.innerHTML = "<!--" + body.tagName + "-->";
+      alert(body.firstChild.data); // что выведет?
+    </script>
+
+    <div>Это</div>
+    <div>Все</div>
+    <div>Элементы DOM</div>
+
+    <script>
+      var elem = document.body.children[0];
+      function remove(elem) {
+        elem.remove();
+      }
+      remove(elem); // <-- функция должна удалить элемент
+      console.log(elem);
+    </script>
+  </body>
+</html>
