@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  1. Напишите функцию insertAfter(elem, refElem), которая добавит elem после узла refElem.
+
+  <div>Это</div>
+  <div id="last">Элементы</div>
+  <script>
+    var elem = document.createElement('div');
+    elem.innerHTML = '<b>Новый элемент</b>';
+    function insertAfter(elem, refElem) {
+      refElem.appendChild(elem);
+      var last = document.querySelector('#last');
+      }
+    var body = document.body;
+    // вставить elem после первого элемента
+    insertAfter(elem, body.firstElementChild); // <--- должно работать
+    // вставить elem за последним элементом
+    insertAfter(elem, body.lastElementChild);  // <--- должно работать, но не сработало!
+    insertAfter(elem, last); // <--- пришлось добавить id второму Диву, потому что lastElementChild определял последним элементом не тег Див, а тег Скрипт. А поскольку этот тег не отображается в ДОМе, то и новый элемент после него тоже не хотел отображаться.
+  </script>
+  
+  2. Напишите функцию removeChildren, которая удаляет всех потомков элемента.
+  
+  <table>
+    <tr>
+      <td>Это</td><td>Все</td><td>Элементы DOM</td>
+    </tr>
+  </table>
+  <ol>
+    <li>Вася</li>
+    <li>Петя</li>
+    <li>Маша</li>
+    <li>Даша</li>
+  </ol>
+  <script>
+    function removeChildren(elem) {
+      document.body.removeChild(elem);
+    }
+    removeChildren(document.body.children[0]); // очищает таблицу
+    removeChildren(document.body.children[1]); // очищает список
+  </script>
+  
+</body>
+</html>
