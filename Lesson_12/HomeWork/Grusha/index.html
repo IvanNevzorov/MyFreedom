@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Это</div>
+    <div>Элементы</div>
+    <script>
+    var elem = document.createElement('div');
+    elem.innerHTML = '<b>Новый элемент</b>';
+    function insertAfter(elem, refElem) {
+       refElem.after(elem);  /* ваш код */ }
+    var body = document.body;
+    // вставить elem после первого элемента
+    insertAfter(elem, body.firstElementChild); // <--- должно работать
+    // вставить elem за последним элементом
+    insertAfter(elem, body.lastElementChild); // <--- должно работать, работает, но стирает результат первого выполнения
+    </script>  
+    
+    
+    <!-- <table>
+        <tr>
+        <td>Это</td><td>Все</td><td>Элементы DOM</td>
+        </tr>
+        </table>
+        <ol>
+        <li>Вася</li>
+        <li>Петя</li>
+        <li>Маша</li>
+        <li>Даша</li>
+        </ol>
+        <script>
+        function removeChildren(elem) { 
+            document.body.removeChild(elem);/* ваш код */ 
+        }
+        removeChildren(document.body.children[0]); // очищает таблицу
+        removeChildren(document.body.children[1]); // очищает список
+        </script> -->
+</body>
+</html>
