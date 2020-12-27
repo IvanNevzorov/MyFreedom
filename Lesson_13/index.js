@@ -60,3 +60,7 @@ foo.apply(oldObj, argArray);
 
 let {nameIvan} = obj;
 let {second, first, third} = array;[1,2,3]
+
+// 1 - pending (ожидание, выполнение промиса)
+// 2 - fullfill (промис завершился положительно (метод resolve))
+// 3 - rejected (промис завершился c ошибкой (метод reject))
