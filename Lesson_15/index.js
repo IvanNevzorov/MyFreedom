@@ -35,11 +35,9 @@
 // localStorage.setItem("1235", 123);
 
 let xhr = new XMLHttpRequest();
-
-console.log(xhr);
 //инициализация
 // xhr.open(method, URL, [async, user, passwork])
-xhr.open("GET", "https://jsonplaceholder.typicode.com/todos");
+xhr.open("GET", "https://jsonplaceholder.typicode.com/todos1");
 
 //инициализация
 // xhr.sent([body])
@@ -49,17 +47,49 @@ xhr.send();
 xhr.onload = (event) => {
   console.log(event);
   console.log(xhr.status);
+  if (xhr.status === 200) {
+    console.log(xhr.response);
+    dataJSON.parse(xhr.response);
+    let todos = JSON.parse(xhr.response);
+    todos.map((item) => {
+      let li = document.createElement("li");
 
-  let todos = JSON.parse(xhr.response);
-  todos.map((item) => {
-    let li = document.createElement("li");
-
-    let h1 = document.createElement("h1");
-    h1.appendChild(document.createTextNode(item.title));
-    let parag = document.createElement("p");
-    parag.appendChild(document.createTextNode(item.body));
-    li.appendChild(h1);
-    li.appendChild(parag);
-    console.log(li);
-  });
+      let h1 = document.createElement("h1");
+      h1.appendChild(document.createTextNode(item.title));
+      let parag = document.createElement("p");
+      parag.appendChild(document.createTextNode(item.body));
+      li.appendChild(h1);
+      li.appendChild(parag);
+      console.log(li);
+    });
+  }
 };
+
+xhr.onerror = (error) => {
+  console.log(error);
+};
+
+let xhr1 = new XMLHttpRequest();
+xhr1.open("GET", "https://jsonplaceholder.typicode.com/todos1");
+xhr1.send();
+xhr1.onload = (event) => {
+  if (xhr1.status === 200) {
+    let xhr2 = new XMLHttpRequest();
+    xhr2.open("GET", "https://jsonplaceholder.typicode.com/todos1");
+    xhr2.send(xhr1.response);
+    xhr2.onload = (event) => {
+      if (xhr.status === 200) {
+        let xhr3 = new XMLHttpRequest();
+        xhr3.open("GET", "https://jsonplaceholder.typicode.com/todos1");
+        xhr3.send(xhr2.response);
+        xhr3.onload = (event) => {
+          if (xhr.status === 200) {
+          }
+        };
+        xhr3.onerror = (error) => {};
+      }
+    };
+    xhr2.onerror = (error) => {};
+  }
+};
+xhr.onerror = (error) => {};
