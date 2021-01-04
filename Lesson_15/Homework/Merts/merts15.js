@@ -15,9 +15,18 @@ xhr.onload = function() {
         body.appendChild(ul);
         if(Array.isArray(todos)) {
             todos.forEach(element => {
+                let data = JSON.stringify(element);
                 let li = document.createElement('li');
-                li.innerHTML = JSON.stringify(element);
+                let h2 = document.createElement('h2');
+                let p = document.createElement('p');
+                h2.innerHTML = "ID: " + element.id;
+                p.innerHTML = "Title: " + element.title;
                 ul.appendChild(li);
+                li.appendChild(h2);
+                li.appendChild(p);
+                p = document.createElement('p');
+                p.innerHTML = `Completed: ${element.completed}`;
+                li.appendChild(p);
             });
         } else {
             let li = document.createElement('li');
