@@ -131,3 +131,11 @@ console.log([], [].length);
 console.log([1], [1].length);
 console.log([1, 2], [1, 2].length);
 console.log([1, 2, 3], [1, 2, 3].length);
+
+array.map();
+array.filter();
+
+let isarray = [];
+let str = "array";
+console.log(Array.isArray(str));
+isarray.isArray();

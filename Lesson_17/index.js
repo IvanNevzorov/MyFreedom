@@ -54,3 +54,7 @@ text.addEventListener("click", clickTextTest);
 // document.addEventListener("click", () => {
 //   console.log("document");
 // });
+
+
+
+array.map(()=>{})
