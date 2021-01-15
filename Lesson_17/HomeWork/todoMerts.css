@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+
+body {
+    text-align: center;
+}
+
+h1 {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: rgb(5, 55, 97);
+    text-align: center;
+}
+
+#pencil {
+    cursor: pointer;
+    color: rgb(5, 55, 97);
+}
+
+#textTask {
+    height: 36px;
+    width: 300px;
+    border: 1px solid rgb(5, 55, 97);
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+input::placeholder{
+    color: rgb(122, 183, 233);
+}
+
+:focus::-webkit-input-placeholder{ opacity: 0.5; }
+:focus::-moz-placeholder{ opacity: 0.5; }
+:focus:-moz-placeholder{ opacity: 0.5; }
+:focus:-ms-input-placeholder{ opacity: 0.5; }
+
+.todos {
+    padding: 20px 20px;
+    font-size: 18px;
+}
+
+.todos li {
+    list-style-type: none;
+}
+
+.todo-trash {
+    padding-left: 5px;
+    cursor: pointer;
+    color:  rgb(0, 121, 221);
+}
+
+button {
+    height: 30px;
+    width: 120px;
+    border: 1px solid rgb(0, 121, 221);
+    border-radius: 4px;
+    background-color: rgb(0, 121, 221);
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+button:hover {
+    transform: scale(1.066);
+}
+
+#overlay {
+    padding-top: 20px;
+}
+
+.tips li {
+    font-size: 16px;
+    list-style-position: inside;
+    color: rgb(5, 55, 97);;
+}
