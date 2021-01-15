@@ -1,0 +1,22 @@
+.parent {
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+  background-color: red;
+}
+
+.children {
+  width: 200px;
+  height: 200px;
+  padding: 50px;
+  background-color: green;
+}
+
+p {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+a {
+  color: white;
+}
