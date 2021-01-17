@@ -50,3 +50,18 @@ if ({} || (1 && [] && " " && null)) {
 }
 
 const some = {} && 1 && [] && "1";
+
+
+xhr.onload = (e) => {
+  console.log(e);
+  console.log(xhr.status);
+  console.log(JSON.parse(xhr.response));
+  const usersArr = JSON.parse(xhr.response);
+}
+
+xhr.addEventListener('load', (e) => {
+  console.log(e);
+  console.log(xhr.status);
+  console.log(JSON.parse(xhr.response));
+  const usersArr = JSON.parse(xhr.response);
+})
