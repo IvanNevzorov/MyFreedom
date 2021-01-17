@@ -1,0 +1,25 @@
+main {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.messages {
+  display: none;
+}
+
+#divMessages {
+  width: 40vw;
+  height: 40vh;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.seletUser {
+  display: block;
+}
+
+.Ivan {
+  background-color: red;
+  margin-left: auto;
+}

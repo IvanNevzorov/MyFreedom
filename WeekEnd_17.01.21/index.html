@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="seletUser">
+        <div id="blockSelectUser">
+          <input type="text" id="inputUser" placeholder="Введите Имя юзера" />
+          <button id="btnChoose" type="button">Выбрать</button>
+        </div>
+      </div>
+      <div class="messages">
+        <div id="divMessages"></div>
+        <div class="container">
+          <div id="blockSendMessages">
+            <input
+              type="text"
+              id="inputMessages"
+              placeholder="Введите сообщение"
+            />
+            <button id="btnSend" type="button">Отправить</button>
+            <button id="btnClear" type="button">Очистить</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./dist/bundle.js"></script>
+  </body>
+</html>
