@@ -1,6 +1,7 @@
 class App {
   constructor() {
     this.inputs = [];
+    this.render = new Render();
   }
 
   checkInputs() {
@@ -9,7 +10,6 @@ class App {
   }
 
   renderInputs() {
-    let render = new Render();
-    render.render(this.inputs);
+    this.render.render(this.inputs);
   }
 }
