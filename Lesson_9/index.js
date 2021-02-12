@@ -110,3 +110,4 @@ console.log("Animal");
 Animal.foo();
 console.log("dog4");
 dog4.foo();
+

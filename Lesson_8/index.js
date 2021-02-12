@@ -20,12 +20,13 @@ function Person(name = "ivan", age) {
   this.name = name;
 }
 
-// Person.prototype.getAge = function () {
-//   console.log(this.age);
-// };
-// Person.prototype.getName = function () {
-//   console.log(this.name);
-// };
+Person.prototype.getAge = function () {
+  console.log(this.age);
+};
+
+Person.getName = function () {
+  console.log(this.name);
+};
 
 let obj = {};
 let person = new Person("Slava", 20);
@@ -76,3 +77,18 @@ let array = [1, 2, 3, 4];
 let newArray = Array.of(...array);
 // array = [...array];
 newArray.push(5);
+
+function func() {
+  this.name = '1'
+  return 1
+}
+
+console.log(func());
+console.log(new func());
+
+let exampleFunc = ()=>{
+
+}
+
+
+console.log(new exampleFunc());
