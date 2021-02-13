@@ -20,3 +20,26 @@ function foo() {
 let obj = foo();
 
 console.log(obj.a);
+
+function first() {
+  function second() {
+    third();
+  }
+
+  function third() {}
+
+  second();
+}
+first();
+
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+  };
+}
+
+let couterFirst = counter();
+couterFirst();
+let couterSecond = counter();
+couterFirst();
